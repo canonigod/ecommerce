@@ -6,7 +6,7 @@
   flex-direction: column;
   width: 80dvw;
   max-width: 400px;
-  height: 100vh;
+  height: 100dvh;
   background-color: white;
   border-left: 1px solid var(--lighter_gray);
   border-top-left-radius: 10px;
