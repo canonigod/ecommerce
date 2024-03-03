@@ -21,7 +21,7 @@ import styles from "../styles/components/ProductDetailInfo.module.css";
 import { Button, CardText, QuantityInput, Text } from "@/components";
 
 // Custom hooks
-import { useFormatNumberWithCommas } from "../hooks/customHooks";
+import { formatNumberWithCommas } from "../hooks/customHooks";
 
 export const ProductDetailInfo = ({ product }) => {
   const { title, description, rating, price, stock } = product;
@@ -67,8 +67,8 @@ export const ProductDetailInfo = ({ product }) => {
       {/* Second Box */}
       <div className={`${styles.box} ${styles.w100}  ${styles.priceWrapper}`}>
         <p className={styles.price}>
-          ${useFormatNumberWithCommas(price)} or $
-          {useFormatNumberWithCommas(price / 6)}/mo
+          ${formatNumberWithCommas(price)} or $
+          {formatNumberWithCommas(price / 6)}/mo
         </p>
         <p className={styles.priceSubtitle}>
           Suggested payments with a 6-month financing plan

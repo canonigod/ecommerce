@@ -19,7 +19,7 @@ import styles from "../styles/components/ShoppingCart.module.css";
 import { Button, QuantityInput } from "@/components";
 
 // Custom Hooks
-import { useFormatNumberWithCommas } from "@/hooks/customHooks";
+import { formatNumberWithCommas } from "@/hooks/customHooks";
 
 export const ShoppingCart = () => {
   const {
@@ -55,11 +55,11 @@ export const ShoppingCart = () => {
   const totalPrice = () => getTotalPrice() + shippingAmount + taxAmount();
 
   // Format numbers with commas
-  const formattedProductPrice = (price) => useFormatNumberWithCommas(price);
-  const formattedSubTotal = useFormatNumberWithCommas(getTotalPrice());
-  const formattedShippingAmount = useFormatNumberWithCommas(shippingAmount);
-  const formattedTaxAmount = useFormatNumberWithCommas(taxAmount());
-  const formattedTotalPrice = useFormatNumberWithCommas(totalPrice());
+  const formattedProductPrice = (price) => formatNumberWithCommas(price);
+  const formattedSubTotal = formatNumberWithCommas(getTotalPrice());
+  const formattedShippingAmount = formatNumberWithCommas(shippingAmount);
+  const formattedTaxAmount = formatNumberWithCommas(taxAmount());
+  const formattedTotalPrice = formatNumberWithCommas(totalPrice());
 
   return (
     <div

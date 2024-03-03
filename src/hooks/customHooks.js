@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-export const useFormatNumberWithCommas = (number) => {
+export const formatNumberWithCommas = (number) => {
   // Convert number to string and split into integer and decimal parts
   const [integerPart, decimalPart] = Number(number).toFixed(2).split(".");
 

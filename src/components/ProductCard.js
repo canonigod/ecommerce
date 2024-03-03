@@ -10,11 +10,11 @@ import { ProductCardImage, StarRating, Text } from "@/components";
 import { Tag } from "./Tag";
 
 // Custom hooks
-import { useFormatNumberWithCommas } from '../hooks/customHooks';
+import { formatNumberWithCommas } from '../hooks/customHooks';
 
 export const Product = ({ product }) => {
-  const formattedPrice = useFormatNumberWithCommas(product.price);
-  const formattedFullPrice = product.fullPrice ? useFormatNumberWithCommas(product.fullPrice) : null;
+  const formattedPrice = formatNumberWithCommas(product.price);
+  const formattedFullPrice = formatNumberWithCommas(product.fullPrice);
 
   return (
     <Link href={`/items/${product.id}`} as={`/items/${product.id}`}>
