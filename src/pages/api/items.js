@@ -1,4 +1,4 @@
-import productsData from "../../data/products.json";
+import productsData from "src/data/products.json";
 
 export default async function handler(req, res) {
   try {
