@@ -1,0 +1,144 @@
+.shoppingCart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 80dvw;
+  max-width: 400px;
+  height: 100vh;
+  background-color: white;
+  border-left: 1px solid var(--lighter_gray);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 10px;
+  z-index: 3;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(100%);
+}
+
+.shoppingCart:not(.empty) {
+  justify-content: space-between;
+}
+
+.shoppingCart.open {
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--lighter_gray);
+}
+
+.header h2 {
+  margin: 0;
+  padding: 5px 0 10px;
+}
+
+.closeIcon {
+  font-size: 20px;
+}
+
+.body {
+  padding: 5px;
+  border-bottom: 1px solid var(--lighter_gray);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.product {
+  display: flex;
+  margin-bottom: 30px;
+}
+.product:first-child {
+  margin-top: 20px;
+}
+
+.productImage {
+  flex: 0 0 80px;
+  margin-right: 10px;
+}
+
+.productImage img {
+  border-radius: 5px;
+}
+
+.productDetails {
+  flex: 1;
+}
+
+.productTitle {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.productQuantity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text_gray);
+}
+
+.pricingWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 20px;
+}
+
+.pricing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.subtotalPrice {
+  font-size: 18px;
+  font-weight: 300;
+}
+.shippingPrice,
+.taxPrice {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-top: 1px solid var(--lighter_gray);
+}
+
+.emptyCardTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.emptyCardCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: var(--text_gray);
+}
+
+.emptyCardTitle {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.emptyCardSubtitle {
+  font-size: 15px;
+  font-weight: 300;
+}

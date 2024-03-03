@@ -1,0 +1,37 @@
+.quantityInputWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 4px;
+  background-color: var(--white_hover);
+  border: 1px solid var(--lighter_gray);
+  border-radius: 10px;
+  padding: 2px;
+  width: fit-content;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  font-size: 10px;
+  width: 0;
+  height: 0;
+  padding: 10px;
+  color: var(--text_gray);
+}
+
+.button:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  color: var(--darkGray);
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  color: var(--black);
+}

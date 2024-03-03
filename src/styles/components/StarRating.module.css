@@ -1,0 +1,20 @@
+.stars {
+  color: var(--color_brand_lime);
+  margin: 10px 0;
+}
+
+.darkGray {
+  color: var(--dark_gray);
+}
+.lightGray {
+  color: var(--light_gray);
+}
+.blue {
+  color: var(--color_brand);
+}
+.lime {
+  color: var(--color_brand_lime);
+}
+.yellow {
+  color: var(--color_brand_yellow);
+}

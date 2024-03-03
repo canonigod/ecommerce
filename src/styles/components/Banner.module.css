@@ -1,0 +1,28 @@
+.bannerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  font-size: 12px;
+}
+
+.darkGray {
+  background-color: var(--dark_gray);
+  color: #fff;
+}
+.lightGray {
+  background-color: var(--light_gray);
+  color: var(--black);
+}
+.blue {
+  background-color: var(--color_brand);
+  color: #fff;
+}
+.lime {
+  background-color: var(--color_brand_lime);
+  color: var(--text_blue);
+}
+.yellow {
+  background-color: var(--color_brand_yellow);
+  color: var(--black);
+}

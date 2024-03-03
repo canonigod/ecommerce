@@ -1,0 +1,35 @@
+.cartIcon {
+  display: flex;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  margin-left: 16px;
+  padding: 16px;
+  cursor: pointer;
+  color: var(--dark_gray);
+  font-size: 1rem;
+  position: relative;
+}
+
+.cartIcon:hover {
+  cursor: pointer;
+}
+
+.cartTotal {
+  position: absolute;
+  top: 15%;
+  left: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color_brand);
+  padding: 4px;
+  border: none;
+  border-radius: 50%;
+  width: 5px;
+  height: 5px;
+  font-size: 0.5rem;
+}

@@ -1,0 +1,21 @@
+.categories {
+  padding: 30px 10px 0;
+}
+
+.categoriesCardsWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: stretch;
+  gap: 16px;
+  margin-top: 30px;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 991px) {
+  .categoriesCardsWrapper {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    gap: 16px;
+  }
+}

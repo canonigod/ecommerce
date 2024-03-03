@@ -1,0 +1,43 @@
+.tag{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.darkGray {
+  background-color: var(--dark_gray);
+  color: #fff;
+}
+.lightGray {
+  background-color: var(--light_gray);
+  color: var(--black);
+}
+.blue {
+  background-color: var(--color_brand);
+  color: #fff;
+}
+.lime {
+  background-color: var(--color_brand_lime);
+  color: var(--text_blue);
+}
+.yellow {
+  background-color: var(--color_brand_yellow);
+  color: var(--black);
+}
+.danger {
+  background-color: var(--danger);
+  color: #fff;
+}
+
+.small {
+  width: 50px;
+  font-size: 10px;
+}
+
+.medium {
+  width: 80px;
+  font-size: 14px;
+}

@@ -1,0 +1,92 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 32px;
+  padding: 50px;
+  background-color: var(--color_brand);
+  color: white;
+  margin-top: 50px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  min-height: 250px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+  width: 210px;
+  margin-bottom: 16px;
+}
+
+.description {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.creditCards {
+  display: flex;
+  gap: 8px;
+  font-size: 1.7rem;
+  margin-top: auto;
+}
+
+.rightSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 300px;
+}
+
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.8rem;
+}
+
+.menu a:first-child {
+  margin-top: 30px;
+}
+.menu a:hover {
+  color: var(--color_brand_lime);
+}
+
+.bottomSection {
+  background-color: var(--dark_gray);
+  color: #fff;
+  font-size: 10px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 991px) {
+  .footerWrapper {
+    margin-bottom: 60px;
+  }
+}
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+  }
+
+  .leftSection {
+    width: 400px;
+  }
+
+  .rightSection {
+    justify-content: center;
+    gap: 150px;
+    width: 100%;
+  }
+}

@@ -1,0 +1,29 @@
+.productInfoWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  gap: 16px;
+  padding: 10px;
+}
+
+.breadcrumbs{
+  padding: 30px 10px 0;
+  color: var(--text_gray);
+  font-size: 0.8rem;
+  text-transform: capitalize;
+}
+
+.breadcrumbClickable:hover{
+  color: var(--color_brand);
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 991px) {
+  .productInfoWrapper{
+    flex-direction: row;
+    padding: 10px 50px;
+  }
+  .breadcrumbs{
+    padding: 30px 120px 0;
+  }
+}

@@ -1,0 +1,43 @@
+.container {
+  padding: 0 20px 30px;
+}
+
+.heroWrapper {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border-radius: 20px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 16px;
+}
+
+.textSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 350px;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.title,
+.subtitle {
+  color: #fff;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 991px) {
+  .container {
+    padding: 0 100px 100px;
+  }
+
+  .textSection {
+    margin-left: 50px;
+  }
+}

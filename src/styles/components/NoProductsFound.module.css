@@ -1,0 +1,25 @@
+.page_404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 0;
+  background: transparent;
+}
+
+.page_404 h1 {
+    background-color: var(--color_brand_lime);
+    color: var(--text_blue);
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.copyText {
+  text-align: center;
+}
+.copyText h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: var(--text_blue);
+}

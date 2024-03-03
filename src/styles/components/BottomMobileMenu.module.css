@@ -1,0 +1,23 @@
+.bottomMobileWrapper {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 2px solid var(--lighter_gray);
+  padding: 15px 0;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: none;
+  background-color: transparent;
+  color: var(--text_gray);
+}
