@@ -55,6 +55,7 @@ export const ShoppingCart = () => {
   const totalPrice = () => getTotalPrice() + shippingAmount + taxAmount();
 
   // Format numbers with commas
+  const formattedProductPrice = (price) => useFormatNumberWithCommas(price);
   const formattedSubTotal = useFormatNumberWithCommas(getTotalPrice());
   const formattedShippingAmount = useFormatNumberWithCommas(shippingAmount);
   const formattedTaxAmount = useFormatNumberWithCommas(taxAmount());
@@ -97,7 +98,7 @@ export const ShoppingCart = () => {
                       quantity={getProductQuantity(product.id)}
                       product={product}
                     />
-                    <p>${useFormatNumberWithCommas(product.price)}</p>
+                    <p>${formattedProductPrice(product.price)}</p>
                     <FontAwesomeIcon
                       icon={trash}
                       onClick={() => handleRemoveFromCart(product.id)}

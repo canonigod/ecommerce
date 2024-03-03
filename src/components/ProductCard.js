@@ -44,7 +44,7 @@ export const Product = ({ product }) => {
             <p className={styles.productCategory}>{product.category}</p>
             <div className={styles.priceWrapper}>
               <p className={styles.productPrice}>
-                ${useFormatNumberWithCommas(product.price)}
+                ${formattedPrice}
               </p>
               {formattedFullPrice && (
                 <p className={styles.productFullPrice}>

@@ -21,7 +21,7 @@ const ProductDetailImages = ({ images }) => {
   return (
     <div className={styles.container}>
       <div className={styles.largeImage}>
-        <img src={selectedImage} alt="Large" />
+        <Image width={100} height={100} src={selectedImage} alt="Large" />
       </div>
       <div className={styles.dotContainer}>
         {/* Dots to indicate selected image */}

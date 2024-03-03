@@ -37,7 +37,7 @@ const ProductDetailPage = () => {
     if (router.isReady) {
       fetchProduct();
     }
-  }, [router.isReady]);
+  }, [router.isReady, fetchProduct]);
 
   return !isLoading ? (
     <div>
