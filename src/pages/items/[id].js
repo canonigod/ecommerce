@@ -39,7 +39,7 @@ const ProductDetailPage = () => {
     }
 
     sessionStorage.setItem("currentPage", 1); // Store current page in session storage
-  }, [router.isReady, fetchProduct]);
+  }, [router.isReady]);
 
   return !isLoading ? (
     <div>
