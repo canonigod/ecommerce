@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 // Shopping Cart Context
@@ -30,17 +30,18 @@ export const ShoppingCart = () => {
     removeFromCart,
     getTotalPrice,
   } = useShoppingCart();
+  const shoppingCartRef = useRef(null);
 
   useEffect(() => {
-    const shoppingCartElement = document.querySelector(
-      `.${styles.shoppingCart}`
-    );
     if (isShoppingCartOpen) {
       document.body.style.overflow = "hidden";
-      shoppingCartElement.removeAttribute("inert");
+      shoppingCartRef.current.inert = false;
+
+      // Focusing shopping cart
+      shoppingCartRef.current.focus();
     } else {
       document.body.style.overflow = "auto";
-      shoppingCartElement.setAttribute("inert", true);
+      shoppingCartRef.current.inert = true;
     }
   }, [isShoppingCartOpen]);
 
@@ -68,14 +69,19 @@ export const ShoppingCart = () => {
         ${isShoppingCartOpen ? styles.open : ""}
         ${cartItems.length === 0 ? styles.empty : ""}
       `}
+      ref={shoppingCartRef}
+      tabIndex={-1} // Make the container focusable
     >
       <div className={styles.header}>
         <h2>Shopping Cart</h2>
-        <FontAwesomeIcon
-          icon={close}
-          className={styles.closeIcon}
+        <Button
+          arialLabel="close button"
+          type="ghost"
+          autoWidth
           onClick={toggleShoppingCart}
-        />
+        >
+          <FontAwesomeIcon icon={close} className={styles.closeIcon} />
+        </Button>
       </div>
       {cartItems.length > 0 && (
         <React.Fragment>

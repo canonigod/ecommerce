@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/components/BottomMobileMenu.module.css";
 
 // Internal Components
-import { Text } from "@/components";
+import { Button, Text } from "@/components";
 
 const BottomMobileMenu = () => {
   const { toggleShoppingCart } = useShoppingCart();
@@ -46,17 +46,19 @@ const BottomMobileMenu = () => {
   const getMarkup = (isCart, menu) => {
     if (isCart) {
       return (
-        <button
-          type="button"
-          href={menu.link}
-          className={styles.menuItem}
+        <Button
+          arialLabel="Open shopping cart"
+          type="ghost"
+          dFlex
+          flexColumn
+          autoWidth
           onClick={handleToggleCart}
         >
           <FontAwesomeIcon icon={menu.icon} />
           <Text color="textGray" size="small" bold>
             {menu.text}
           </Text>
-        </button>
+        </Button>
       );
     } else {
       return (

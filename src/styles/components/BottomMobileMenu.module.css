@@ -1,5 +1,6 @@
 .bottomMobileWrapper {
   display: flex;
+  align-items: center;
   justify-content: space-around;
   position: fixed;
   bottom: 0;

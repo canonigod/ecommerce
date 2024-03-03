@@ -28,7 +28,7 @@ const SearchBar = () => {
     e.preventDefault();
     if (query) {
       router.push(`/items?search=${encodeURIComponent(query.trim())}`);
-      
+
       // Reset query after search
       setQuery("");
     }
@@ -43,6 +43,7 @@ const SearchBar = () => {
         <FontAwesomeIcon icon={faSearch} />
       </button>
       <input
+        aria-label="input to search for products"
         className={styles.inputText}
         type="text"
         name="product-search"

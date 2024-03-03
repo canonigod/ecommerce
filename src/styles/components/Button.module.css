@@ -6,6 +6,7 @@
   border-radius: 20px;
   font-weight: bold;
   padding: 12px 0;
+  font-size: 1rem;
 }
 .button:hover {
   cursor: pointer;
@@ -31,6 +32,13 @@
   border: 1px solid var(--color_brand_lime);
   color: var(--text_blue);
 }
+.ghost {
+  background-color: transparent;
+  border: none;
+  width: fit-content;
+  color: var(--text_gray);
+  display: flex;
+}
 
 .circle {
   width: 30px;
@@ -38,6 +46,20 @@
 }
 .regular {
   width: 100%;
+}
+
+.dFlex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.autoWidth {
+  width: auto;
 }
 
 @media screen and (min-width: 991px) {

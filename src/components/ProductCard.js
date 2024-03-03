@@ -10,7 +10,7 @@ import { ProductCardImage, StarRating, Text } from "@/components";
 import { Tag } from "./Tag";
 
 // Custom hooks
-import { formatNumberWithCommas } from '../hooks/customHooks';
+import { formatNumberWithCommas } from "../hooks/customHooks";
 
 export const Product = ({ product }) => {
   const formattedPrice = formatNumberWithCommas(product.price);
@@ -19,14 +19,20 @@ export const Product = ({ product }) => {
   return (
     <Link href={`/items/${product.id}`} as={`/items/${product.id}`}>
       <div className={styles.productInfoWrapper}>
-        <div className={styles.imageWrapper}>
+        <div
+          aria-label="click to open product details page"
+          className={styles.imageWrapper}
+        >
           <ProductCardImage
             alt={product.title}
             src={product.thumbnail}
             width={350}
             height={200}
           />
-          <div className={styles.tag}>
+          <div
+            aria-label={`Discount percentage: ${product.discountPercentage}`}
+            className={styles.tag}
+          >
             <Tag
               backgroundColor="danger"
               text={`-${product.discountPercentage}%`}
@@ -35,20 +41,46 @@ export const Product = ({ product }) => {
           </div>
         </div>
         <div className={styles.productInfo}>
-          <p className={styles.productTitle}>{product.title}</p>
-          <p className={styles.productDescription}>{product.description}</p>
-          <div className={styles.rating}>
+          <p
+            aria-label={`Product title: ${product.title}`}
+            className={styles.productTitle}
+          >
+            {product.title}
+          </p>
+          <p
+            aria-label={`Product description: ${product.description}`}
+            className={styles.productDescription}
+          >
+            {product.description}
+          </p>
+          <div
+            aria-label={`Product rating: ${product.rating}`}
+            className={styles.rating}
+          >
             <StarRating rating={product.rating} />
           </div>
           <div className={styles.productCatPrice}>
-            <p className={styles.productCategory}>{product.category}</p>
+            <p
+              aria-label={`Product category: ${product.category}`}
+              className={styles.productCategory}
+            >
+              {product.category}
+            </p>
             <div className={styles.priceWrapper}>
-              <p className={styles.productPrice}>
+              <p
+                aria-label={`Product price after discount: ${formattedPrice}`}
+                className={styles.productPrice}
+              >
                 ${formattedPrice}
               </p>
               {formattedFullPrice && (
-                <p className={styles.productFullPrice}>
-                  <Text color="lime" size="medium"><s>${formattedFullPrice}</s></Text>
+                <p
+                  aria-label={`Product price before discount: ${formattedFullPrice}`}
+                  className={styles.productFullPrice}
+                >
+                  <Text color="lime" size="medium">
+                    <s>${formattedFullPrice}</s>
+                  </Text>
                 </p>
               )}
             </div>

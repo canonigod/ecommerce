@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -14,12 +14,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/components/MobileMenu.module.css";
 
 // Internal Components
-import { SearchBar } from "@/components";
+import { Button, SearchBar } from "@/components";
 
 const MobileMenu = () => {
   const [activeIndex, setActiveIndex] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [positionSticky, setPositionSticky] = useState(true);
+
+  // Dialog ref that is used to manage focus
+  const dialogRef = useRef(null);
 
   const menuItems = [
     {
@@ -43,14 +46,14 @@ const MobileMenu = () => {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      document
-        .querySelector(`.${styles.openMenuWrapper}`)
-        .removeAttribute("inert");
+      dialogRef.current.inert = false;
+
+      // Focus on the dialog when it opens
+      dialogRef.current.focus();
     } else {
       document.body.style.overflow = "auto";
-      document
-        .querySelector(`.${styles.openMenuWrapper}`)
-        .setAttribute("inert", true);
+      dialogRef.current.inert = true;
+
     }
   }, [isOpen]);
 
@@ -77,19 +80,29 @@ const MobileMenu = () => {
             height={40}
           />
         </Link>
-        <FontAwesomeIcon icon={hamburger} onClick={toggleMenu} />
+        <Button
+          arialLabel="open website menu"
+          type="ghost"
+          onClick={toggleMenu}
+          autoWidth
+        >
+          <FontAwesomeIcon icon={hamburger} />
+        </Button>
       </div>
       <SearchBar />
-      <div
+      <dialog
         className={`${styles.openMenuWrapper} ${isOpen && styles.open}`}
-        role="presentation"
+        ref={dialogRef}
       >
         {/* Close Button */}
-        <FontAwesomeIcon
-          className={styles.closeIcon}
-          icon={close}
+        <Button
+          arialLabel="close website menu"
+          type="ghost"
           onClick={toggleMenu}
-        />
+          autoWidth
+        >
+          <FontAwesomeIcon className={styles.closeIcon} icon={close} />
+        </Button>
 
         {/* Logo */}
         <div className={styles.logoWrapper}>
@@ -110,11 +123,16 @@ const MobileMenu = () => {
               className={activeIndex === index ? styles.activeMenu : ""}
               key={index}
             >
-              <li onClick={() => handleActiveIndex(index)}>{item.text}</li>
+              <li
+                aria-label={item.text}
+                onClick={() => handleActiveIndex(index)}
+              >
+                {item.text}
+              </li>
             </Link>
           ))}
         </ul>
-      </div>
+      </dialog>
     </div>
   );
 };
