@@ -1,4 +1,4 @@
-.page_404 {
+.noProductsWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,7 @@
   background: transparent;
 }
 
-.page_404 h1 {
+.noProductsWrapper h1 {
     background-color: var(--color_brand_lime);
     color: var(--text_blue);
     padding: 10px 20px;
@@ -22,4 +22,17 @@
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: var(--text_blue);
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 991px) {
+  .noProductsWrapper img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .noProductsWrapper img {
+    width: 100%;
+  }
 }

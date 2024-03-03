@@ -1,12 +1,12 @@
 import React from "react";
+import Image from "next/image";
 
 // Styles
 import styles from "../styles/components/NoProductsFound.module.css";
-import Image from "next/image";
 
 const NoProductsFound = () => {
   return (
-    <div className={styles.page_404}>
+    <div className={styles.noProductsWrapper}>
       <h1 className="text-center "><i>Boo-hoo!</i></h1>
       <Image
         src="https://cdn.dribbble.com/users/9149409/screenshots/17499670/media/0b857fc7b7baa9919f790a6038a77464.gif"
