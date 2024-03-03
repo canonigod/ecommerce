@@ -19,7 +19,7 @@ import { Button } from "@/components";
 
 const ProductDetailImages = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(images && images[0]);
-  const [isShareButtonOpen, setIsShareButtonOpen] = useState(true);
+  const [isShareButtonOpen, setIsShareButtonOpen] = useState(false);
 
   // Change the active dot
   const handleDotClick = (index) => {
