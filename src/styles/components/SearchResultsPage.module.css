@@ -12,11 +12,12 @@
   justify-content: space-between;
   width: 100%;
   padding: 0 10px;
+  margin-bottom: 30px;
 }
 
 .productsWrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -30,11 +31,4 @@
 .title {
   font-size: 20px;
   color: var(--text_gray);
-}
-
-/* MEDIA QUERIES */
-@media screen and (min-width: 991px) {
-  .productsWrapper {
-    flex-direction: row;
-  }
 }
