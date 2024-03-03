@@ -6,12 +6,8 @@ import Image from "next/image";
 // Styles
 import styles from "../styles/components/ProductDetailImages.module.css";
 
-// Custom hook
-import { useScreenSize } from "@/hooks/customHooks";
-
 const ProductDetailImages = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(images && images[0]);
-  const { isMobile, isTablet } = useScreenSize();
 
   // Change the active dot
   const handleDotClick = (index) => {

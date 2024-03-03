@@ -1,13 +1,15 @@
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
-const productsFilePath = path.join(process.cwd(), 'data', 'products.json');
-const productsData = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
+const productsFilePath = path.join(process.cwd(), "data", "products.json");
+const productsData = JSON.parse(fs.readFileSync(productsFilePath, "utf8"));
 
 export default async function handler(req, res) {
   try {
     if (req.method === "GET") {
-      const { search, id, page = 1, limit = 15 } = req.query;
+      const { search, id, page = 1, limit = 5 } = req.query;
+
+      console.log(req.query, "search");
 
       // Fetch a specific product by ID
       if (id) {
@@ -57,7 +59,10 @@ export default async function handler(req, res) {
           endIndex
         );
 
-        res.status(200).json(paginatedProducts);
+        res.status(200).json({
+          paginatedProducts: paginatedProducts,
+          productsQuantity: filteredProductsWithFullPrice.length,
+        });
       } else {
         // Return all products if no search query provided
 
@@ -75,7 +80,10 @@ export default async function handler(req, res) {
         const endIndex = page * limit;
         const paginatedProducts = allProducts.slice(startIndex, endIndex);
 
-        res.status(200).json(paginatedProducts);
+        res.status(200).json({
+          paginatedProducts: paginatedProducts,
+          productsQuantity: allProducts.length,
+        });
       }
     } else {
       res.status(405).json({ error: "Method Not Allowed" });

@@ -1,5 +1,4 @@
-"use client";
-import React, { useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 // Fontawesome
@@ -21,11 +20,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   for (let i = 1; i <= totalPages; i++) {
     pageNumbers.push(i);
   }
-
-  useEffect(() => {
-    // Scroll to the top of the page whenever currentPage changes
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
 
   const handlePrevPage = () => {
     onPageChange(currentPage - 1);

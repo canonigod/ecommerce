@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
 
@@ -9,6 +10,10 @@ import styles from "../styles/components/CardLink.module.css";
 import { Text } from "@/components";
 
 const CardLink = ({ imageUrl, text, textColor, href }) => {
+  useEffect(() => {
+    sessionStorage.setItem("currentPage", 1); // Store current page in session storage
+  }, []);
+  
   return (
     <div
       className={styles.card}

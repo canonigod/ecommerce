@@ -17,7 +17,10 @@ export const Product = ({ product }) => {
   const formattedFullPrice = formatNumberWithCommas(product.fullPrice);
 
   return (
-    <Link href={`/items/${product.id}`} as={`/items/${product.id}?product=${product.title}`}>
+    <Link
+      href={`/items/${product.id}`}
+      as={`/items/${product.id}?product=${product.title}`}
+    >
       <div className={styles.productInfoWrapper}>
         <div
           aria-label="click to open product details page"

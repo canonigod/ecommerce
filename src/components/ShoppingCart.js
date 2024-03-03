@@ -21,7 +21,7 @@ import { Button, QuantityInput } from "@/components";
 // Custom Hooks
 import { formatNumberWithCommas } from "@/hooks/customHooks";
 
-export const ShoppingCart = () => {
+const ShoppingCart = () => {
   const {
     isShoppingCartOpen,
     toggleShoppingCart,
@@ -154,3 +154,6 @@ export const ShoppingCart = () => {
     </div>
   );
 };
+
+
+export default ShoppingCart;

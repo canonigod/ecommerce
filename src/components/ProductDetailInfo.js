@@ -56,7 +56,7 @@ export const ProductDetailInfo = ({ product }) => {
     <div className={`${styles.productInfoWrapper}`}>
       {/* First Box */}
       <div className={`${styles.box} ${styles.w100}  ${styles.productInfo}`}>
-        <h2 className={styles.title}>{title}</h2>
+        <h1 className={styles.title}>{title}</h1>
         <p className={styles.description}>{description}</p>
         <div className={styles.rating}>
           {rating && <StarRating color="blue" rating={rating} />}{" "}
@@ -122,3 +122,5 @@ export const ProductDetailInfo = ({ product }) => {
 ProductDetailInfo.propTypes = {
   product: PropTypes.object.isRequired,
 };
+
+export default ProductDetailInfo;

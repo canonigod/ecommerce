@@ -27,7 +27,7 @@ const SearchBar = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query) {
-      router.push(`/items?search=${encodeURIComponent(query.trim())}`);
+      router.push(`/items?search=${encodeURIComponent(query.trim())}&page=1`);
 
       // Reset query after search
       setQuery("");

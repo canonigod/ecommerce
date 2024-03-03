@@ -37,6 +37,8 @@ const ProductDetailPage = () => {
     if (router.isReady) {
       fetchProduct();
     }
+
+    sessionStorage.setItem("currentPage", 1); // Store current page in session storage
   }, [router.isReady, fetchProduct]);
 
   return !isLoading ? (

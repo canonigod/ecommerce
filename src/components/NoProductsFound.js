@@ -9,7 +9,7 @@ const NoProductsFound = () => {
     <div className={styles.noProductsWrapper}>
       <h1 className="text-center "><i>Boo-hoo!</i></h1>
       <Image
-        src="https://cdn.dribbble.com/users/9149409/screenshots/17499670/media/0b857fc7b7baa9919f790a6038a77464.gif"
+        src="/images/ghost-gif.gif"
         alt="No product found ghost gif"
         width={400}
         height={300}
