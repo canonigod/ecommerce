@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import StarRating from "./StarRating";
 
 // Shopping Cart Context
 import { useShoppingCart } from "../context/ShoppingCartContext";
@@ -18,7 +17,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/components/ProductDetailInfo.module.css";
 
 // Internal Components
-import { Button, CardText, QuantityInput, Text } from "@/components";
+import {
+  Button,
+  CardText,
+  QuantityInput,
+  StarRating,
+  Text,
+} from "@/components";
 
 // Custom hooks
 import { formatNumberWithCommas } from "../hooks/customHooks";
@@ -87,9 +92,7 @@ export const ProductDetailInfo = ({ product }) => {
 
         {/* Second Section */}
         <div className={styles.buyButtonsWrapper}>
-          <Button icon={<FontAwesomeIcon icon={bolt} />}>
-            Buy Now
-          </Button>
+          <Button icon={<FontAwesomeIcon icon={bolt} />}>Buy Now</Button>
           <Button
             icon={<FontAwesomeIcon icon={cart} />}
             type="secondary"

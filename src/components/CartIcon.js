@@ -4,13 +4,15 @@ import React from "react";
 // Shopping Cart Context
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
-// Styles
-import styles from "../styles/components/CartIcon.module.css";
-
 // Fontawesome
 import { faCartShopping as cart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Button from "./Button";
+
+// Styles
+import styles from "../styles/components/CartIcon.module.css";
+
+// Internal Components
+import { Button } from "@/components";
 
 const CartIcon = () => {
   const { cartItems, toggleShoppingCart } = useShoppingCart();

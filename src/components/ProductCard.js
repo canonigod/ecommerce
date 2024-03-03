@@ -6,8 +6,7 @@ import Link from "next/link";
 import styles from "../styles/components/ProductCard.module.css";
 
 // Internal Components
-import { ProductCardImage, StarRating, Text } from "@/components";
-import { Tag } from "./Tag";
+import { ProductCardImage, StarRating, Tag, Text } from "@/components";
 
 // Custom hooks
 import { formatNumberWithCommas } from "../hooks/customHooks";

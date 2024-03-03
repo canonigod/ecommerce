@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/components/Footer.module.css";
 
 // Internal Components
-import Text from "./Text";
+import { Text } from "@/components";
 
 const Footer = () => {
   const menuOne = [

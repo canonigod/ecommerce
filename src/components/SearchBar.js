@@ -8,7 +8,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Styles
 import styles from "../styles/components/SearchBar.module.css";
-import Button from "./Button";
+
+// Internal Components
+import { Button } from "@/components";
 
 const SearchBar = () => {
   const router = useRouter();
