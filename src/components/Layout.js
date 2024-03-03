@@ -60,8 +60,8 @@ const getPageTitle = (pathname, query) => {
       return `${
         query.search ? query.search : "Browse All"
       } - Decathlon | Online Store`;
-    case "/item":
-      return "Item - Decathlon | Online Store";
+    case "/items/[id]":
+      return `${query.product ? query.product : 'Product Details'} - Decathlon | Online Store`;
     default:
       return "Decathlon | Online Store";
   }
