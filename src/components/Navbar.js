@@ -39,7 +39,7 @@ const Navbar = () => {
   return (
     <nav className={styles.Navbar}>
       <div className={styles.logoMenu}>
-        <a href="/" onClick={() => setActiveIndex(null)}>
+        <Link href="/" onClick={() => setActiveIndex(null)}>
           <Image
             src="/images/logo.png"
             alt="Decathlon logo"
@@ -47,7 +47,7 @@ const Navbar = () => {
             width={112}
             height={28}
           />
-        </a>
+        </Link>
 
         <ul className={styles.menuItems}>
           {menuItems.map((item, index) => (

@@ -19,7 +19,7 @@ const NoProductsFound = () => {
 
       <div className={styles.copyText}>
         <h3>No Products Found &#58;&#40;</h3>
-        <p>The product you're looking for couldn't be found.</p>
+        <p>The product you&apos;re looking for couldn&apos;t be found.</p>
       </div>
     </div>
   );

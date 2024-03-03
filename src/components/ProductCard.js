@@ -13,6 +13,9 @@ import { Tag } from "./Tag";
 import { useFormatNumberWithCommas } from '../hooks/customHooks';
 
 export const Product = ({ product }) => {
+  const formattedPrice = useFormatNumberWithCommas(product.price);
+  const formattedFullPrice = product.fullPrice ? useFormatNumberWithCommas(product.fullPrice) : null;
+
   return (
     <Link href={`/items/${product.id}`} as={`/items/${product.id}`}>
       <div className={styles.productInfoWrapper}>
@@ -43,9 +46,9 @@ export const Product = ({ product }) => {
               <p className={styles.productPrice}>
                 ${useFormatNumberWithCommas(product.price)}
               </p>
-              {product.fullPrice && (
+              {formattedFullPrice && (
                 <p className={styles.productFullPrice}>
-                  <Text color="lime" size="medium"><s>${useFormatNumberWithCommas(product.fullPrice)}</s></Text>
+                  <Text color="lime" size="medium"><s>${formattedFullPrice}</s></Text>
                 </p>
               )}
             </div>

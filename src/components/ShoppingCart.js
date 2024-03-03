@@ -54,12 +54,18 @@ export const ShoppingCart = () => {
   const taxAmount = () => getTotalPrice() * taxPercentage;
   const totalPrice = () => getTotalPrice() + shippingAmount + taxAmount();
 
+  // Format numbers with commas
+  const formattedSubTotal = useFormatNumberWithCommas(getTotalPrice());
+  const formattedShippingAmount = useFormatNumberWithCommas(shippingAmount);
+  const formattedTaxAmount = useFormatNumberWithCommas(taxAmount());
+  const formattedTotalPrice = useFormatNumberWithCommas(totalPrice());
+
   return (
     <div
       className={`
         ${styles.shoppingCart} 
         ${isShoppingCartOpen ? styles.open : ""}
-        ${cartItems.length === 0 ? styles.emptyCardCopy : ""}
+        ${cartItems.length === 0 ? styles.empty : ""}
       `}
     >
       <div className={styles.header}>
@@ -105,20 +111,20 @@ export const ShoppingCart = () => {
             <div className={styles.pricingWrapper}>
               <div className={`${styles.pricing} ${styles.subtotalPrice}`}>
                 <p>Subtotal</p>
-                <p>${useFormatNumberWithCommas(getTotalPrice())}</p>
+                <p>${formattedSubTotal}</p>
               </div>
               <div className={`${styles.pricing} ${styles.shippingPrice}`}>
                 <p>Shipping</p>
-                <p>${useFormatNumberWithCommas(shippingAmount)}</p>
+                <p>${formattedShippingAmount}</p>
               </div>
               <div className={`${styles.pricing} ${styles.taxPrice}`}>
                 <p>VAT (23%)</p>
-                <p>${useFormatNumberWithCommas(taxAmount())}</p>
+                <p>${formattedTaxAmount}</p>
               </div>
             </div>
             <div className={styles.footer}>
               <p>Total</p>
-              <p>${useFormatNumberWithCommas(totalPrice())}</p>
+              <p>${formattedTotalPrice}</p>
             </div>
             <Button noMaxWidth>Proceed to checkout</Button>
           </div>

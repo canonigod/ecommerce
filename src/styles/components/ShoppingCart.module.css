@@ -20,6 +20,9 @@
 .shoppingCart:not(.empty) {
   justify-content: space-between;
 }
+.shoppingCart .empty {
+  justify-content: start;
+}
 
 .shoppingCart.open {
   transition: transform 0.3s ease-in-out;
