@@ -15,9 +15,11 @@ import {
 // Styles
 import styles from "../styles/components/QuantityInput.module.css";
 
-const QuantityInput = ({ stock, product, quantity }) => {
-  const { addToCart, getProductQuantity, decreaseFromProduct } = useShoppingCart();
+import { Button } from "@/components";
 
+const QuantityInput = ({ stock, product, quantity }) => {
+  const { addToCart, getProductQuantity, decreaseFromProduct } =
+    useShoppingCart();
 
   const handleAddProductToCart = (product) => {
     addToCart(product);
@@ -29,32 +31,31 @@ const QuantityInput = ({ stock, product, quantity }) => {
 
   return (
     <div className={styles.quantityInputWrapper}>
-      <button
-        className={`${styles.button}`}
-        type="button"
+      <Button
         aria-label="Decrease quantity"
         onClick={() => handleRemoveFromCart(product.id)}
         disabled={quantity === 0}
+        type="ghost"
+        autoWidth
+        noPadding
+        size="small"
       >
         <FontAwesomeIcon icon={minus} />
-      </button>
-      <input
-        className={styles.input}
-        type="number"
-        min="1"
-        max={stock}
-        value={getProductQuantity(product.id)}
-        readOnly
-      />
-      <button
-        className={`${styles.button}`}
-        type="button"
+      </Button>
+      <p aria-label="Amount of product added to cart">
+        {getProductQuantity(product.id)}
+      </p>
+      <Button
         aria-label="Increase quantity"
         onClick={() => handleAddProductToCart(product)}
         disabled={quantity === stock}
+        type="ghost"
+        autoWidth
+        noPadding
+        size="small"
       >
         <FontAwesomeIcon icon={plus} />
-      </button>
+      </Button>
     </div>
   );
 };

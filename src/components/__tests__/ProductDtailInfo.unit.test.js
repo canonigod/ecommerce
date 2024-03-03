@@ -93,14 +93,11 @@ describe("ProductDetailInfo component", () => {
     );
 
     // Increase the quantity using QuantityInput
-    const input = screen.getByRole("spinbutton");
-    const quantityInput = screen.getByRole("button", {
-      name: /Increase quantity/i,
-    });
+    const quantityInput = screen.getAllByRole("button")[1];
 
     await userEvent.click(quantityInput);
 
     // Check if quantity has increased
-    expect(input.value).toBe("2");
+    expect(screen.getByText("2")).toBeInTheDocument();
   });
 });

@@ -28,14 +28,14 @@ const Layout = ({ children }) => {
     <React.Fragment>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, minimum-scale=1.0" />
       </Head>
       <ShoppingCartProvider>
         {/* Shopping Cart */}
         <ShoppingCart />
         {/* Offer Banner */}
         <Banner
-          backgroundColor="blue"
+          backgroundColor="darkGray"
           boldText="Act Fast!"
           text="Save up to 50% on Summer Sale deals. Explore Sale"
         />

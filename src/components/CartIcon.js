@@ -10,19 +10,23 @@ import styles from "../styles/components/CartIcon.module.css";
 // Fontawesome
 import { faCartShopping as cart } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Button from "./Button";
 
 const CartIcon = () => {
   const { cartItems, toggleShoppingCart } = useShoppingCart();
 
   return (
-    <button
-      type="button"
-      className={styles.cartIcon}
-      onClick={toggleShoppingCart}
-    >
-      <FontAwesomeIcon icon={cart} />
-      {cartItems.length > 0 && <div className={styles.cartTotal}></div>}
-    </button>
+    <div className={styles.cartIcon}>
+      <Button
+        arialLabel="open cart button"
+        type="ghost"
+        autoWidth
+        onClick={toggleShoppingCart}
+      >
+        <FontAwesomeIcon icon={cart} />
+        {cartItems.length > 0 && <div className={styles.cartTotal}></div>}
+      </Button>
+    </div>
   );
 };
 

@@ -13,6 +13,7 @@ const Button = ({
   flexColumn,
   icon,
   noMaxWidth,
+  noPadding,
   onClick,
   size = "regular",
   type = "primary",
@@ -23,6 +24,7 @@ const Button = ({
     styles[size],
     autoWidth && styles.autoWidth,
     noMaxWidth && styles.noMaxWidth,
+    noPadding && styles.noPadding,
     dFlex && styles.dFlex,
     flexColumn && styles.flexColumn,
   ].join(" ");
@@ -49,6 +51,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   dFlex: PropTypes.bool,
   flexColumn: PropTypes.bool,
+  noPadding: PropTypes.bool,
   noMaxWidth: PropTypes.bool,
   icon: PropTypes.node,
   onClick: PropTypes.func,

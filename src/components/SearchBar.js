@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 // Styles
 import styles from "../styles/components/SearchBar.module.css";
+import Button from "./Button";
 
 const SearchBar = () => {
   const router = useRouter();
@@ -39,9 +40,9 @@ const SearchBar = () => {
       className={`${styles.searchBar} ${isFocused ? styles.focused : ""}`}
       onSubmit={handleSubmit}
     >
-      <button className={styles.searchIcon} type="submit" disabled={!query}>
+      <Button arialLabel="search button" type="ghost" autoWidth>
         <FontAwesomeIcon icon={faSearch} />
-      </button>
+      </Button>
       <input
         aria-label="input to search for products"
         className={styles.inputText}
