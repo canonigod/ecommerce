@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const productsFilePath = path.join(process.cwd(), 'src/data', 'products.json');
+const productsFilePath = path.join(process.cwd(), 'data', 'products.json');
 const productsData = JSON.parse(fs.readFileSync(productsFilePath, 'utf8'));
 
 export default async function handler(req, res) {

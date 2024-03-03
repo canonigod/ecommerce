@@ -55,7 +55,7 @@ const SearchResultsPage = () => {
   // Calculate the index range of products to display based on current page and page size
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const endIndex = Math.min(startIndex + PAGE_SIZE, products.length);
-  const paginatedProducts = products.slice(startIndex, endIndex);
+  const paginatedProducts = products?.slice(startIndex, endIndex);
 
   return products.length > 0 && !isLoading ? (
     <div className={styles.wrapper}>
