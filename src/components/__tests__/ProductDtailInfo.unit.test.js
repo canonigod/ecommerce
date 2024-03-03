@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import userEvent from "@testing-library/user-event";
 
 import { ProductDetailInfo } from "@/components";
-import { ShoppingCartProvider } from "../src/context/ShoppingCartContext";
+import { ShoppingCartProvider } from "../../context/ShoppingCartContext";
 
 describe("ProductDetailInfo component", () => {
   const product = {
